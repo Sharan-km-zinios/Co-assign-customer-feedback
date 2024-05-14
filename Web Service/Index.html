@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page</title>
+</head>
+<body>
+  <header>
+  </header>
+  <main>
+    <section id="feedback-widget">
+      <h2>Customer Feedback</h2>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+  <script>
+    const vueProdScriptUrl = "../path/to/prod.js";
+    const script = document.createElement('script');
+    script.src = vueProdScriptUrl;
+    script.async = true;
+    document.body.appendChild(script);
+  </script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page</title>
+</head>
+
+<body>
+  <header>
+  </header>
+
+  <main>
+    <section>
+      <h2>Customer Feedback</h2>
+      <iframe id="feedbackFrame" frameborder="0" style="width: 100%; height: 600px;"></iframe>
+    </section>
+  </main>
+
+  <footer>
+  </footer>
+
+  <script>
+    (function() {
+
+      const paramsData = {
+        account:'hanan-bhat',
+        project:'Test%20Proj',
+        author:'sharan',
+        tenant:'iridge%20inc',
+        token:''
+      }
+
+      let iframe = document.getElementById('feedbackFrame')
+      iframe.src = `http://localhost:5174/?account=${paramsData.account}&project=${paramsData.project}
+                    &auhtor=${paramsData.author}&tenant=${paramsData.tenant}`
+    })()
+  </script>
+</body>
+</html>
